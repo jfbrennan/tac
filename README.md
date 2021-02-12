@@ -1,22 +1,33 @@
-You’re probably not in the mood for a new CSS methodology, but the web platform has progressed enough that it's time to at least consider another approach.
+# Tag, Attributes, then Classes
+**Tag, Attributes, then Classes** helps you solve the four main problem areas of implementing a design: 
+- generic repeating styles
+- components
+- evolution and maintenance
+- sharing the code
 
-The methodology is called **Tag, Attributes, then Classes** (TAC) and it's quite simple. 
+If you want to see a design system built following the TAC methodology, check out [M-](https://m-docs.org) (pronounced "em dash"). You can also read [10 Ways M- Raises the Bar for UI Libraries](https://dev.to/jfbrennan/10-ways-m-raises-the-bar-for-ui-libraries-2p4i) and follow [@realEmDash](https://twitter.com/realEmDash).
 
-It was first developed at Expedia while building a framework-agnostic design system used by globally-distributed teams. It's since been refined and used at other companies, including a small AI startup, which means TAC scales up and down (more on that later).
+### Outline
+1. Create utility classes that do one generic thing
+  - Avoid single character abbreviations
+  - Prefix related classes, e.g. `.txt-center`, `.txt-right`
+  - The `.lowercase-dash-separated` convention is all you need
+1. Define [custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) for design tokens 
+1. Use tags and attributes for components
+  - Use up HTML, then imitate it
+  - Define a custom tag prefix
+  - Give tags short but meaningful names
+  - Use attributes for component variations
+  - Specificity scores increase in tag -> utility class -> tag+attribute order
+1. Evolve your components with Custom Elements
+  - Components always start life as a CSS-only custom tag
+  - Upgrade to Custom Elements when JavaScript is required
+  - Upgrading and downgrading is non-breaking
+1. TAC is ideal for shared design systems
+  - Framework-agnostic
+  - Static sites, SPA, SSR, PWA - they're all supported
+  - Value is in the adoption rate
 
-Before we start, let's remember there are no silver bullets in software design, only tradeoffs. As for TAC, it optimizes for solving these four big problems of UI development:
-1. Generic repeated styles
-1. Components
-1. Evolution and maintenance
-1. Sharing the code
-
-Application-centric problems, like routing or state, are outside its scope. TAC is UI-centric.
-
-For future reference, there is an outline of the process all the way at the bottom.
-
-Let's begin!
-
----
 
 ## 1. Generic repeating styles
 All web designs include some amount of repeating styles. Most designs repeat a lot. These styles are as granular and tangible as color and font size, but also conceptual like layout and other design patterns. Most CSS methodologies find and implement these common styles as reusable **classes** and to an extent TAC includes this technique as well. 
@@ -445,32 +456,3 @@ A design system's value is tied to its adoption rate. The more use, the more val
 Let's end with what we started: there are no silver bullets.
 TAC is just the UI layer. For some projects, that's more than enough. For modern web applications, frameworks like Vue, Riot, Svelte, and even React play a critical role, but with TAC **the role of frameworks narrows**. You no longer use these frameworks for UI components. Instead, you use them for _application structure and state management_. This visual helps explain:
 
-
-
-
-## Review
-**Tag, Attributes, and Classes** helps you solve the four main problem areas of implementing a design: generic repeating styles, components, evolution and maintenance, sharing the code.
-
-If you want a quick reference (or got bored and just scrolled down here), there's a reference outline of TAC below. 
-
-If you want to see a design system built following the TAC methodology, check out [M-](https://m-docs.org) (pronounced "em dash"). You can also read [10 Ways M- Raises the Bar for UI Libraries](https://dev.to/jfbrennan/10-ways-m-raises-the-bar-for-ui-libraries-2p4i) and follow [@realEmDash](https://twitter.com/realEmDash).
-**TAC Outline**
-1. Create utility classes that do one generic thing
-  - Avoid single character abbreviations
-  - Prefix related classes, e.g. `.txt-center`, `.txt-right`
-  - The `.lowercase-dash-separated` convention is all you need
-1. Define [custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) for design tokens 
-1. Use tags and attributes for components
-  - Use up HTML, then imitate it
-  - Define a custom tag prefix
-  - Give tags short but meaningful names
-  - Use attributes for component variations
-  - Specificity scores increase in tag -> utility class -> tag+attribute order
-1. Evolve your components with Custom Elements
-  - Components always start life as a CSS-only custom tag
-  - Upgrade to Custom Elements when JavaScript is required
-  - Upgrading and downgrading is non-breaking
-1. TAC is ideal for shared design systems
-  - Framework-agnostic
-  - Static sites, SPA, SSR, PWA - they're all supported
-  - Value is in the adoption rate
