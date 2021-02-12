@@ -1,5 +1,5 @@
 # Tag, Attributes, then Classes methodology
-**Tag, Attributes, then Classes** or **TAC** helps you solve the four main problem areas of implementing a design: 
+**Tag, Attributes, then Classes** or **TAC** does more than help you write clean CSS. It helps you solve all four main problem areas of implementing designs: 
 - generic repeating styles
 - UI components
 - evolution and maintenance
