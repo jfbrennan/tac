@@ -1,15 +1,14 @@
-# Tag, Attributes, then Classes methodology
-**Tag, Attributes, then Classes** or **TAC** does more than help you write clean CSS. It helps you solve all four main problem areas of implementing designs: 
-- generic repeating styles
-- UI components
-- evolution and maintenance
-- sharing the code
+# Tag, Attributes, then Classes 
+### A CSS methodology for the Custom Elements age
+**Tag, Attributes, then Classes** or **TAC** helps you solve the four main problem areas of implementing designs: 
+1. Generic repeating styles
+1. UI components
+1. Evolution and maintenance
+1. Sharing the code
 
-TAC is different than other class-based CSS methodologies (BEM, OOCSS, utility-only Tailwind).
+TAC goes beyond the class-based CSS methodologies like BEM, OOCSS, or utility-only (e.g. Tailwind).
 
-TAC can be applied to simple sites, large apps, and full-scale design systems.
-
-TAC leverages the web platform in ways that take advantage of everything it has to offer.
+TAC can be applied to simple sites, large apps, and full-scale enterprise design systems.
 
 TAC results in small, standards-based code with zero dependencies.
 
